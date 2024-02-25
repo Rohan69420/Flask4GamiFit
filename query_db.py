@@ -15,7 +15,8 @@ def get_data(value):
         cursor = connection.cursor()
 
         # Execute the SQL query
-        cursor.execute("SELECT * FROM nutritionalinfo")
+        query = "SELECT * FROM nutritionalinfo WHERE fooditem = '"+ str(value) +"'"
+        cursor.execute(query)
 
         # Fetch all the rows
         rows = cursor.fetchall()
@@ -32,5 +33,3 @@ def get_data(value):
             cursor.close()
             connection.close()
 
-# Call the function with the value for FoodItem
-get_data('apple_pie')
