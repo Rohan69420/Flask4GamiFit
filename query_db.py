@@ -22,7 +22,7 @@ def get_data(value):
         rows = cursor.fetchall()
 
         for row in rows:
-            print(row)
+            return row
 
     except (Exception, psycopg2.Error) as error:
         print("Error while fetching data from PostgreSQL", error)
